@@ -1,0 +1,62 @@
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+      <p>Ready to transform your business with AI?</p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Let's Start a Conversation</h3>
+        <p>We're here to help you leverage the power of artificial intelligence for your business success.</p>
+        <div class="contact-details">
+          <div class="contact-item" *ngFor="let info of contactInfo">
+            <i [class]="info.icon"></i>
+            <div>
+              <h4>{{ info.title }}</h4>
+              <p>{{ info.value }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" (ngSubmit)="onSubmit()" #contactFormRef="ngForm">
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Your Name" 
+            [(ngModel)]="contactForm.name"
+            required>
+        </div>
+        <div class="form-group">
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Your Email" 
+            [(ngModel)]="contactForm.email"
+            required>
+        </div>
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="subject" 
+            name="subject" 
+            placeholder="Subject" 
+            [(ngModel)]="contactForm.subject"
+            required>
+        </div>
+        <div class="form-group">
+          <textarea 
+            id="message" 
+            name="message" 
+            placeholder="Your Message" 
+            rows="5" 
+            [(ngModel)]="contactForm.message"
+            required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>

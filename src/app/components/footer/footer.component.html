@@ -1,0 +1,34 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>TheAILegend</h3>
+        <p>Transforming businesses through cutting-edge AI solutions and innovative technology.</p>
+        <div class="social-links">
+          <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li *ngFor="let service of serviceLinks">
+            <a (click)="navigateToRoute(service.url)">{{ service.title }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li *ngFor="let company of companyLinks">
+            <a (click)="navigateToRoute(company.url)">{{ company.title }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 TheAILegend. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
