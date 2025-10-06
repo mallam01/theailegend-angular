@@ -1,11 +1,10 @@
-// Note: Install Node.js and run 'npm install' to resolve Angular dependencies
-// For now, this is a placeholder routes file
+import { Routes } from '@angular/router';
 
-export const routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: 'HomeComponent' },
-  { path: 'about', component: 'AboutComponent' },
-  { path: 'services', component: 'ServicesComponent' },
-  { path: 'contact', component: 'ContactComponent' },
+  { path: 'home', loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent) },
+  { path: 'about', loadComponent: () => import('./components/about/about.component').then(m => m.AboutComponent) },
+  { path: 'services', loadComponent: () => import('./components/services/services.component').then(m => m.ServicesComponent) },
+  { path: 'contact', loadComponent: () => import('./components/contact/contact.component').then(m => m.ContactComponent) },
   { path: '**', redirectTo: '/home' }
 ];
